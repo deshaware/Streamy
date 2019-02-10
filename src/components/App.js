@@ -6,8 +6,8 @@ import StreamEdit from './Stream/StreamEdit';
 import StreamList from './Stream/StreamList';
 import StreamDelete from './Stream/StreamDelete';
 import StreamShow from './Stream/StreamShow';
-import GoogleAuth from './GoogleAuth';
 
+import Header from './Header';
 
 
 class App extends React.Component{
@@ -16,14 +16,13 @@ class App extends React.Component{
             <div className="ui container">
                 <BrowserRouter>
                 <div>
-                    <Route path="/stream/show" exact component={StreamShow} />
-                    <Route path="/stream/add" exact component={StreamCreate} />
-                    <Route path="/stream/edit" exact component={StreamEdit} />
-                    <Route path="/stream/delete" exact component={StreamDelete} />
+                    <Header></Header>
+                    <Route path="/streams/show" exact component={StreamShow} />
+                    <Route path="/streams/new" exact component={StreamCreate} />
+                    <Route path="/streams/edit" exact component={StreamEdit} />
+                    <Route path="/streams/delete" exact component={StreamDelete} />
                     <Route path="/" exact component={StreamList} />
-                    <GoogleAuth />
                 </div>
-                    
                 </BrowserRouter>
             </div>
         );
