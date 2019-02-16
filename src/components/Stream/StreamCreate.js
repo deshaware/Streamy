@@ -32,9 +32,10 @@ class StreamCreate extends React.Component{
         )
     }
 
-    onSubmit(formValues){
+    onSubmit = (formValues) => {
         console.log(formValues);
         //network request to send data over json server api
+        this.props.createStream(formValues);
 
     }
     
@@ -61,7 +62,9 @@ const validate = formData => {
     return errors;
 }
 
-export default reduxForm({
+const formWrapped = reduxForm({
     form: 'streamCreate',
     validate
 })(StreamCreate); 
+
+export default connect(null,{createStream})(formWrapped);

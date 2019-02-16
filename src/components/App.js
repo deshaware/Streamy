@@ -17,11 +17,11 @@ class App extends React.Component{
                 <BrowserRouter>
                 <div>
                     <Header></Header>
-                    <Route path="/streams/show" exact component={StreamShow} />
-                    <Route path="/streams/new" exact component={StreamCreate} />
-                    <Route path="/streams/edit" exact component={StreamEdit} />
-                    <Route path="/streams/delete" exact component={StreamDelete} />
-                    <Route path="/" exact component={StreamList} />
+                    <Route path="/streams/show" exact render={() => <StreamShow />} />
+                    <Route path="/streams/new" exact render={() => <StreamCreate />}/>
+                    <Route path="/streams/edit" exact render={() => <StreamEdit />}/>
+                    <Route path="/streams/delete" exact render={() => <StreamDelete />}/>
+                    <Route path="/" exact render={() => <StreamList />} />
                 </div>
                 </BrowserRouter>
             </div>
