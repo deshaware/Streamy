@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route} from 'react-router-dom';
+import {Router, Route, Switch} from 'react-router-dom';
 
 import StreamCreate from './Stream/StreamCreate';
 import StreamEdit from './Stream/StreamEdit';
@@ -18,12 +18,14 @@ class App extends React.Component{
             <div className="ui container">
                 <Router  history={history}>
                 <div>
-                    <Header></Header>
-                    <Route path="/streams/show" exact render={() => <StreamShow />} />
-                    <Route path="/streams/new" exact render={() => <StreamCreate />}/>
-                    <Route path="/streams/edit/:id" exact render={props => <StreamEdit {...props} />}/>
-                    <Route path="/streams/delete/:id" exact render={props => <StreamDelete {...props} />}/>
-                    <Route path="/" exact render={() => <StreamList />} />
+                    <Header />
+                    <Switch>                        
+                        <Route path="/streams/new" exact render={() => <StreamCreate />}/>
+                        <Route path="/streams/:id" exact render={props => <StreamShow {...props} />} />
+                        <Route path="/streams/edit/:id" exact render={props => <StreamEdit {...props} />}/>
+                        <Route path="/streams/delete/:id" exact render={props => <StreamDelete {...props} />}/>
+                        <Route path="/" exact render={() => <StreamList />} />
+                    </Switch>                    
                 </div>
                 </Router >
             </div>
