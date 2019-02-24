@@ -22,7 +22,7 @@ class App extends React.Component{
                     <Route path="/streams/show" exact render={() => <StreamShow />} />
                     <Route path="/streams/new" exact render={() => <StreamCreate />}/>
                     <Route path="/streams/edit/:id" exact render={props => <StreamEdit {...props} />}/>
-                    <Route path="/streams/delete" exact render={() => <StreamDelete />}/>
+                    <Route path="/streams/delete/:id" exact render={props => <StreamDelete {...props} />}/>
                     <Route path="/" exact render={() => <StreamList />} />
                 </div>
                 </Router >

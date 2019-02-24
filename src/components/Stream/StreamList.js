@@ -15,14 +15,16 @@ class StreamList extends React.Component{
                 <div className="right floated content">
                     <Link to={`/streams/edit/${stream.id}`} className="ui button primary" >Edit
                     </Link>
-                    <button className="ui button negative">Delete</button>
+                    {/* <button className="ui button negative">Delete</button> */}
+                    <Link 
+                        to={`/streams/delete/${stream.id}`} className="ui button negative"
+                    >Delete</Link>
                 </div>
             )
         }
     }
 
     renderStreams(){ 
-        console.log("aaya")      
         return this.props.streams.map(stream => {
             return (
                 <div className="item" key={stream.id}>

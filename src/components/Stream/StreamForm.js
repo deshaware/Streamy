@@ -21,7 +21,6 @@ class StreamForm extends React.Component{
             <label >{label}</label>
             <input {...input} autoComplete="off"/>
             <div className="ui red">{this.renderError(meta)}</div>
-
             </div>
         )
     }
